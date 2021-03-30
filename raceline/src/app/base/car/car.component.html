@@ -1,0 +1,20 @@
+<h4>{{car.modelName}}</h4>
+<h5 *ngIf="car.driver"> {{car.driver.firstName}}</h5>
+<div class="images">
+    <img [src]="car.imageUrl"/>
+    <div class="driver" *ngIf="car.driver">
+        <img *ngIf="car.driver.firstName" [src]="car.driver.imageUrl"/>
+    </div>    
+</div>
+<div class="health" [title]="'Stan ' + car.health + '%'">
+    <div [style.width.%]="car.health"></div>
+</div>
+<div class="property" [class.active]="car.activeNitro">
+    Nitro
+</div>
+  <div class="property" [class.active]="car.activeBonus">
+    Bonus
+</div>
+<div class="actions">
+    <ng-content></ng-content>
+</div>

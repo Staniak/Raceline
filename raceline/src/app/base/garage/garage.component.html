@@ -1,0 +1,13 @@
+<p>GARAŻ</p>
+<div class ="col-md-6">
+    <app-car *ngFor="let car of cars" [car]="car">
+        <button *ngIf = "selectedDriver && !car.driver" (click) = "assignDriver(car)">Przydziel</button>
+        <button *ngIf = "car.driver" (click) = "deassignDriver(car)">Opuść</button>
+    </app-car>
+</div>
+<div class ="col-md-6">
+    <app-driver-room (selected)="selectedDriver = $event"></app-driver-room>
+</div>
+<div class ="col-md-6">
+    <app-mechanic-room></app-mechanic-room>
+</div>

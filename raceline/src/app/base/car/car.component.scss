@@ -1,0 +1,51 @@
+:host {
+    display: inline-block;
+    max-width: 130px;
+    margin: 10px;
+    text-align: center;
+    background-color: rgba(255, 235, 205, 0.4);
+    border-radius: 5px;
+  }
+  .images {
+    min-height: 100px;
+    position: relative;
+    img {
+      position: relative;
+      // z-index: 10;
+    }
+    .driver {
+      position: absolute;
+      object-fit: cover;
+      bottom:0px;
+      right:0px;
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+  
+  .health {
+    background-color: red;
+    height: 10px;
+  }
+  
+  .health div {
+    background-color: green;
+    height: 100%;
+  }
+  
+  .property {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 4px;
+    color: red;
+  }
+  
+  .property.active {
+    color: green;
+  }
+

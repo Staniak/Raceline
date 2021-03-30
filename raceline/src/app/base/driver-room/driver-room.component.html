@@ -1,0 +1,6 @@
+<app-driver *ngFor="let driver of drivers" [driver]="driver" [class.selected]="selectedDriver === driver">
+    <button *ngIf="selectedDriver !== driver; else deselectButton" (click)="select(driver)">Zaznacz</button>
+    <ng-template #deselectButton>
+        <button (click)="select(null)">Odznacz</button>
+    </ng-template>
+</app-driver>

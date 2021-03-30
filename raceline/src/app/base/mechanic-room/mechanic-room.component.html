@@ -1,0 +1,16 @@
+<form [formGroup] = "form" (ngSubmit) = orderCar(form.value)>
+    <label class="control-label">Ilość</label>
+    <input formControlName = "shipCount" type="number">
+    <span *ngIf="form.get('shipCount').hasError('required')" class="error">
+        podaj wartość
+    </span>
+    <span *ngIf="form.get('shipCount').hasError('min') || form.get('shipCount').hasError('max')" class="error">
+        podaj liczbę z zakresu 1-5
+    </span>
+    <label class="control-label">Model</label>
+    <label *ngFor = "let carType of carTypes">
+        <input type="radio" formControlName = "shipType" [value]="carType.value">
+        {{ carType.label }}
+    </label>
+    <button type="submit" [disabled]="form.invalid">Produkuj</button>
+</form>
